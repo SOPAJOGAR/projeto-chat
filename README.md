@@ -5,6 +5,8 @@ PT-BR
 
 Para instalar o "Whatsapp 2" no termux:
 
+pkg install git
+
 git clone https://github.com/SOPAJOGAR/projeto-chat
 
 pip install -r requirements.txt
@@ -26,6 +28,8 @@ Um projeto pensado para a comunicação social
 EN-US
 
 For install the "Whatsapp 2" in termux:
+
+pkg install git
 
 git clone https://github.com/SOPAJOGAR/projeto-chat
 
