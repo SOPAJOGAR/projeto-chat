@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Whatsapp 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/estilo.css"> 
+
+    <style>
+        .logo-container {
+            text-align: center; /* Centraliza horizontalmente */
+            margin-top: 20px; /* Espaço superior para centralizar verticalmente */
+        }
+
+        .logo-container img {
+            display: block; /* Remove qualquer espaçamento vertical indesejado */
+            margin: 0 auto; /* Centraliza a imagem horizontalmente */
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="/static/whatsapp_logo.png" alt="Logo do WhatsApp">
+    </div>
+    <h1 style="text-align: center;">WHATSAPP 2</h1>
+    <ul id="chat">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    
+    <input type="text" id="nameInput" placeholder="Seu nome">
+    <input type="text" id="messageInput" placeholder="Digite sua mensagem">
+    <button onclick="sendMessage()">Enviar</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        socket.on('message', function(message) {
+            // Lógica para exibir a mensagem em tempo real na interface do usuário
+            var chat = document.getElementById("chat");
+            var li = document.createElement("li");
+            li.textContent = message;
+            chat.appendChild(li);
+        });
+
+        function sendMessage() {
+            // Lógica para enviar mensagens para o servidor WebSocket
+            var nameInput = document.getElementById("nameInput");
+            var messageInput = document.getElementById("messageInput");
+            var name = nameInput.value;
+            var message = messageInput.value;
+
+            if (name !== "" && message !== "") {
+                socket.emit('message', name + ": " + message);
+                nameInput.value = "";
+                messageInput.value = "";
+            }
+        }
+    </script>
+</body>
+</html>

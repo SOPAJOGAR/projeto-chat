@@ -1,0 +1,48 @@
+/* Estilo para o título */
+h1 {
+    text-align: center;
+    color: #18b63a; /* Cor azul */
+}
+
+/* Estilo para a lista de mensagens */
+#chat {
+    list-style-type: '';
+    padding: 0;
+    margin: 0;
+}
+
+/* Adicione a classe .message para estilizar as mensagens */
+.message {
+    background-color: #3b2acc; /* Cor de fundo cinza claro */
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Adicione uma borda sólida */
+}
+
+/* Estilo para os campos de entrada e botões */
+input[type="text"], button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background-color: hsla(138, 78%, 42%, 0.788);
+    color: #fcfcfc;
+    cursor: pointer;
+}
+
+.left-button {
+    background-color: #e74c3c; /* Cor de fundo vermelha */
+}
+
+/* Estilo para o botão receber no máximo 768px de largura */
+@media (max-width: 768px) {
+    .left-button {
+        float: none;
+    }
+}
