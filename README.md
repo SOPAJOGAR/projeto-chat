@@ -5,9 +5,9 @@ PT-BR
 
 Para instalar o "Whatsapp 2" no termux:
 
-pip install -r requirements.txt
-
 git clone https://github.com/SOPAJOGAR/projeto-chat
+
+pip install -r requirements.txt
 
 python servidor.py
 
@@ -27,9 +27,9 @@ EN-US
 
 For install the "Whatsapp 2" in termux:
 
-pip install -r requirements.txt
-
 git clone https://github.com/SOPAJOGAR/projeto-chat
+
+pip install -r requirements.txt
 
 In the browser enter in 127.0.0.1:2023
 
